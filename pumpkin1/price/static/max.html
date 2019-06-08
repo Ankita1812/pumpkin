@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Max Price</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    	 <tbody>
+		  	{% for item in Pumpkins %}
+		    <p>
+		      <h4>City:&nbsp{{ item.city }}</h4>
+		      <h4>Date:&nbsp{{ item.date }}</h4>
+		      <h4>HighPrice:&nbsp{{ item.highp }}</h4>
+		    <p/>
+
+		    {% endfor %}
+		  </tbody>
+
+</body>
+</html>

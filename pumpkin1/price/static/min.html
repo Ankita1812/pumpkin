@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Min Price</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+</head>
+<body>
+    	 <tbody>
+		  	{% for item in Pumpkins %}
+		    <p>
+		      <h4>City:&nbsp{{ item.city }}</h4>
+		      <h4>Date:&nbsp{{ item.date }}</h4>
+		      <h4>LowPrice:&nbsp{{ item.lowp }}</h4>
+		    <p/>
+
+		    {% endfor %}
+		  </tbody>
+
+</body>
+</html>
