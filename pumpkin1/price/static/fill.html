@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pumpkin Price </title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></head>
+<body>
+  <div class="container">
+    <form method="GET">
+      {% csrf_token %}
+        {% for i in form %}
+      <div class="form-group row">
+        <h1>{{ i.label }}</h1>
+        <div class="col-10">
+          {{ i }}
+        </div>
+      </div>
+      {% endfor %}
+
+      <div class="form-group row">
+        <div class="offset-sm-2 col-sm-6">
+
+
+            <button type="submit' formaction="{% url 'read' %}">current price</button>
+            <button type="submit' formaction="{% url 'max' %}">max price</button>
+            <button type="submit' formaction="{% url 'min' %}">min price</button>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

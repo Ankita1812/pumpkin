@@ -7,16 +7,20 @@
 </head>
 <body>
     	 <tbody>
-		  	{% for item in Pumpkins %}
+		 {% if %}
+		  	{% for i in Pumpkins %}
 		    <p>
-		      <h4>City:&nbsp{{ item.city }}</h4>
-		      <h4>Date:&nbsp{{ item.date }}</h4>
-		      <h4>HighPrice:&nbsp{{ item.highp }}</h4>
-		      <h4>LowPrice:&nbsp{{ item.lowp }}</h4>
+		      <h4>City:&nbsp{{ i.city }}</h4>
+		      <h4>Date:&nbsp{{ i.date }}</h4>
+		      <h4>HighPrice:&nbsp{{ i.highp }}</h4>
+		      <h4>LowPrice:&nbsp{{ i.lowp }}</h4>
 		    <p/>
 
 		    {% endfor %}
 		  </tbody>
+		{% else %}
+			<h2>NO item available</h2>
+		{% endif %}
 
 </body>
 </html>

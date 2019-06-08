@@ -10,7 +10,6 @@ from .serializers import PumpkinSerializer
 from .models import Pumpkin, mydb
 from rest_framework.renderers import TemplateHTMLRenderer
 import datetime
-
 import mysql.connector
 mydb = mysql.connector.connect(
   host="localhost",
@@ -38,11 +37,7 @@ class getPrice(APIView):
 	template_name = 'static/read.html'
 
 	def get_Price_Bydate(self,request):
-		'''mycursor = mydb.cursor()
-		mycursor.execute("SELECT * FROM atlanta1")
-		mycursor.execute("SELECT * FROM atlanta1 WHERE date =10/15/2016")
-		myresult = mycursor.fetchall()
-		'''
+
 		renderer_classes = [TemplateHTMLRenderer]
 		template_name = 'static/read.html'
 
@@ -86,4 +81,33 @@ class getPrice(APIView):
 			return Response({"PumpkinsMin": serializer.min})
 
 
+    def forecast(self, request):
+        x = df_train['City']
+        y = df_train['SalePrice']
 
+        x = (x - x.mean()) / x.std()
+        x = np.c_[np.ones(x.shape[0]), x]
+        clf = LinearRegression()
+        clf.fit(x, y, n_iter=2000, lr=0.01)
+
+        def predict(self, X):
+            return np.dot(X, self._W)
+
+        def _gradient_descent_step(self, X, targets, lr):
+            predictions = self.predict(X)
+
+            error = predictions - targets
+            gradient = np.dot(X.T, error) / len(X)
+
+            self._W -= lr * gradient
+
+        def fit(self, X, y, n_iter=100000, lr=0.01):
+            self._W = np.zeros(X.shape[1])
+
+            for i in range(n_iter):
+                self._gradient_descent_step(x, y, lr)
+
+            return self
+
+        clf = LinearRegression()
+        clf.fit(x, y, n_iter=2000, lr=0.01)

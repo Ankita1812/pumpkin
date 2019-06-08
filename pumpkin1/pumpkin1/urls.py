@@ -38,5 +38,6 @@ urlpatterns = [
 
     path('get/max', getPrice.max_price().as_view(template_name='max.html')),
     path('get/min', getPrice.min_price().as_view(template_name='min.html')),
+    path('get/forcast', getPrice.forcast().as_view(template_name='forecast.html')),
 
 ]

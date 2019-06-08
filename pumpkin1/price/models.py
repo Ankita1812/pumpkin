@@ -1,7 +1,7 @@
 from django.db import models
 import uuid
 from django.contrib.auth.models import User
-''''import mysql.connector
+import mysql.connector
 # Create your models here.
 import pandas as pd
 
@@ -12,7 +12,7 @@ mydb = mysql.connector.connect(
     database="abc"
 )
 
-# data = pd.read_csv("atlanta.csv")
+# data = pd.read_csv("atlanta.csv")'''
 cityc = [
     (Atlanta, 'ATLANTA'),
     (Baltimore, 'BALTIMORE'),
@@ -28,10 +28,9 @@ cityc = [
     (San_Fransisco, 'SAN FRANSISCO'),
     (St_Louis, 'ST. LOUIS'),
 ]
-'''
 
 class Pumpkin:
     date = models.DateField()
-    city = models.CharField(max_length=100,)# choices=cityc)
+    city = models.CharField(max_length=100,choices=cityc)
     lowp = models.DecimalField()
     highp = models.DecimalField()
