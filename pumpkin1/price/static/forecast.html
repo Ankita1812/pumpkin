@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Price</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    	 <tbody>
+		 {% if %}
+		  	{% for i in Pumpkins %}
+		    <p>
+		      <h4>City:&nbsp{{ i.city }}</h4>
+		      <h4>Date:&nbsp{{ i.date }}</h4>
+		      <h4>HighPrice:&nbsp{{ i.highp }}</h4>
+		      <h4>LowPrice:&nbsp{{ i.lowp }}</h4>
+		    <p/>
+
+		    {% endfor %}
+		  </tbody>
+		{% else %}
+			<h2>No item available</h2>
+		{% endif %}
+
+</body>
+</html>
